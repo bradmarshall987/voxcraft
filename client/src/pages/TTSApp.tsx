@@ -352,7 +352,7 @@ export default function TTSApp() {
       const formData = new FormData();
       const ext = source instanceof File ? source.name.split(".").pop() || "mp3" : "webm";
       const filename = `audio.${ext}`;
-      formData.append("audio", source, filename);
+      formData.append("file", source, filename);
       formData.append("model_id", "scribe_v1");
 
       const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", {
